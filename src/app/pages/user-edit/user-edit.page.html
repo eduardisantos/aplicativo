@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Editar Usuário</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form *ngIf="form" [formGroup]="form" (ngSubmit)="save()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">ID</ion-label>
+        <ion-input type="number" formControlName="id" readonly></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Nome</ion-label>
+        <ion-input formControlName="firstName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Sobrenome</ion-label>
+        <ion-input formControlName="lastName"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">E-mail</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Username</ion-label>
+        <ion-input formControlName="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Senha</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Data de Nascimento</ion-label>
+        <ion-input type="date" formControlName="birthDate"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Tipo Sanguíneo</ion-label>
+        <ion-input formControlName="bloodGroup"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Altura (cm)</ion-label>
+        <ion-input type="number" formControlName="height"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Peso (kg)</ion-label>
+        <ion-input type="number" formControlName="weight"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" type="submit" color="success">
+      Salvar Alterações
+    </ion-button>
+  </form>
+</ion-content>

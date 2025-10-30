@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Lista de Usuários</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="users-container" *ngIf="users.length > 0; else loading">
+    <ion-card *ngFor="let user of users" [routerLink]="['/user-edit', user.id]">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img [src]="user.image" alt="{{ user.firstName }}" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ user.firstName }} {{ user.lastName }}</h2>
+          <p>{{ user.email }}</p>
+          <p><strong>Data de Nasc.:</strong> {{ user.birthDate }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  </div>
+
+  <ng-template #loading>
+    <div class="loading">
+      <ion-spinner name="crescent"></ion-spinner>
+      <p>Carregando usuários...</p>
+    </div>
+  </ng-template>
+</ion-content>

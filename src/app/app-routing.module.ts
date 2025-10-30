@@ -14,11 +14,28 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+  },
+  {
+    path: 'users',
+    loadComponent: () => import('./pages/users/users.page').then(m => m.UsersPage)
+  },
+  {
+    path: 'user-edit/:id',
+    loadComponent: () => import('./pages/user-edit/user-edit.page').then(m => m.UserEditPage)
+  },
+  {
+    path: 'user-edit/:id',
+    loadComponent: () => import('./pages/user-edit/user-edit.page').then(m => m.UserEditPage)
   }
+
+
+
+
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
